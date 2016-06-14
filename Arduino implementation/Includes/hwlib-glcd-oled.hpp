@@ -135,9 +135,11 @@ private:
       int a = pos.x + ( pos.y / 8 ) * size.x;
 
       if( col == foreground ){ 
-         buffer[ a ] |=  ( 0x01 << (pos.y % 8 ));  
+         buffer[ a ] |=  ( 0x01 << (pos.y & 7 ));
       } else {
-         buffer[ a ] &= ~( 0x01 << ( pos.y % 8 )); 
+         //buffer[ a ] |=  ( 0x01 << (pos.y % 8 ));
+         buffer[ a ] &= ~( 0x01 << ( pos.y % 8 ));
+         //buffer[x+ (y/8)*SSD1306_LCDWIDTH] &= ~(1 << (y&7));
       }   
       pixels( pos.x, pos.y / 8, buffer[ a ] );      
    }

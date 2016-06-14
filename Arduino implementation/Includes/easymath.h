@@ -31,10 +31,10 @@ const float SIN_TABLE[181]={
 };
 
 /*
-  acos lookup table is split into three parts, which has a higher accuracy nearer acos(1).
-    - 0 to 0.9 is done in steps of 0.0079 rads. (1/127)
-    - 0.9 to 0.99 is done in steps of 0.0008 rads. (0.01/127)
-    - 0.99 to 1 is done in steps of 0.0002 rads. (0.01/64)	
+  the acos lookup table is split into three parts, which has a higher accuracy closer to acos(1).
+    - 0 to 0.9 is in steps of 0.0079 rads. (1/127)
+    - 0.9 to 0.99 is in steps of 0.0008 rads. (0.01/127)
+    - 0.99 to 1 is in steps of 0.0002 rads. (0.01/64)	
 */
 const byte ACOS_TABLE[278] = {
   255, 254, 252, 251, 250, 249, 247, 246, 245, 243, 242, 241, 240, 238, 237, 236, 234, 233, 232, 231, 229, 228, 227, 225, 224, 223,
