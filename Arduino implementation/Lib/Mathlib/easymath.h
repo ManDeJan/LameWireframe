@@ -1,3 +1,24 @@
+/**
+ * \file
+ * \brief      My optimized math library, greatly inspired and influenced by the work of Oscar Liang and the SpeedTrig math library
+ * \author     Jan Halsema
+ * \copyright  Copyright (c) 2016, Jan Halsema
+ *
+ * \page License
+ *
+ * This library is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 #pragma once
 
 const float PI = 3.13159265358979;
@@ -12,7 +33,10 @@ const float PIby2 = PI / 2;
 #define DEC3 1000
 #define DEC4 10000
 
-//Sin Lookup table
+/**
+ * The sin lookuptable.
+ *
+ */
 const float SIN_TABLE[181]={
   0.000000, 0.008727, 0.017452, 0.026177, 0.034899, 0.043619, 0.052336, 0.061049, 0.069756, 0.078459, 0.087156, 0.095846, 0.104528,
   0.113203, 0.121869, 0.130526, 0.139173, 0.147809, 0.156434, 0.165048, 0.173648, 0.182236, 0.190809, 0.199368, 0.207912, 0.216440,
@@ -30,12 +54,12 @@ const float SIN_TABLE[181]={
   0.995396, 0.996195, 0.996917, 0.997564, 0.998135, 0.998630, 0.999048, 0.999391, 0.999657, 0.999848, 0.999962, 1.000000
 };
 
-/*
-  the acos lookup table is split into three parts, which has a higher accuracy closer to acos(1).
-    - 0 to 0.9 is in steps of 0.0079 rads. (1/127)
-    - 0.9 to 0.99 is in steps of 0.0008 rads. (0.01/127)
-    - 0.99 to 1 is in steps of 0.0002 rads. (0.01/64)	
-*/
+/**
+ * The acos lookup table is split into three parts, which has a higher accuracy closer to acos(1).
+ *   - 0 to 0.9 is in steps of 0.0079 rads. (1/127)
+ *   - 0.9 to 0.99 is in steps of 0.0008 rads. (0.01/127)
+ *   - 0.99 to 1 is in steps of 0.0002 rads. (0.01/64)	
+ */
 const byte ACOS_TABLE[278] = {
   255, 254, 252, 251, 250, 249, 247, 246, 245, 243, 242, 241, 240, 238, 237, 236, 234, 233, 232, 231, 229, 228, 227, 225, 224, 223,
   221, 220, 219, 217, 216, 215, 214, 212, 211, 210, 208, 207, 206, 204, 203, 201, 200, 199, 197, 196, 195, 193, 192, 190, 189, 188,
@@ -56,7 +80,7 @@ float cos(int deg);
 float acos(float num);
 
 int radToMicro(float rad) {
-  //600 - 180 degree
+  // 600 - 180 degree
   //2400 - 0 degree
   
   //y = ax + b
@@ -81,9 +105,9 @@ int floatToInt(float input) {
   return (int)(input + 0.5);
 }
 
-//The functions for sin and cos use lookup table to determine the sin or cos value of the input angle.
-//Input for these functions are scaled up 10 times. e.g. -450 = -45.0 deg
-//  - Both functions return a value between -1 and 1. (e.g. input: -450, output -> -0.7071)
+/// The functions for sin and cos use lookup table to determine the sin or cos value of the input angle.
+/// Input for these functions are scaled up 10 times. e.g. -450 = -45.0 deg
+///   - Both functions return a value between -1 and 1. (e.g. input: -450, output -> -0.7071)
 float sin(int deg) {
   deg *= 10;
   float result = 0;
@@ -150,8 +174,8 @@ float cos(int deg) {
 }
 
 
-//The acos function uses a lookup table for corresponding output. 
-//Output data are stored as byte values (0 - 255), they are scaled down to float number (0.0 - 1.0) for output.
+/// The acos function uses a lookup table for corresponding output. 
+/// Output data are stored as byte values (0 - 255), they are scaled down to float number (0.0 - 1.0) for output.
 float acos(float num) {
   float rads = 0;
   bool negative = false;

@@ -70,23 +70,39 @@ int main( void )
 	pyramid.translate(64, 0, 0);
 	cube.rotateZ(1);
 	cube.rotateY(1);
+	screen.clear();
 
-	int i = 0;
+	int i = 0, j = 0;
+	float scale = 1.02;
 	while (true) {
-
-		i++;
+		screen.clear();
+		
 		pyramid.translate(-1, 0, 0);
-		cube.rotateZ(1);
-		cube.rotateY(2);
-		cube.rotateX(3);
 		pyramid.rotateX(3);
 		if(pyramid.posx < -100){pyramid.posx=100;}
-		if (i == 100) {
-		screen.clear();
 		pyramid.draw();
+
+		cube.rotateZ(3);
+		cube.rotateY(4);
+		cube.rotateX(5);
+		cube.scale(scale);
 		cube.draw();
-		i = 0;
+
+		if(j == 5) {	//here you can specify the amount of calculated frames per flush
+			scale = 0.98;
+		}
+		if (j >= 10){
+			scale = 1.02;
+			j = 0;
+		} else {
+			j++;
 		}
 
+		if(i == 0) {	//here you can specify the amount of calculated frames per flush
+			screen.flush();
+			i=0;
+		} else {
+			i++;
+		}
 	}
 }
