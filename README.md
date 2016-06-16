@@ -34,5 +34,5 @@ This project is intended for the [Arduino Due](https://www.arduino.cc/en/Main/Ar
 
 Copyright (c) 2016, Jan Halsema.
 
-MuStore is licensed under the GNU Lesser General Public License version
+LameWireframe is licensed under the GNU Lesser General Public License version
 3 or higher (LGPLv3+). See the `LICENSE` file for details.
