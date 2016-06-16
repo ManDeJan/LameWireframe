@@ -1,0 +1,109 @@
+\hypertarget{classdriedobj}{\section{driedobj Class Reference}
+\label{classdriedobj}\index{driedobj@{driedobj}}
+}
+
+
+The main class, it can manipulate and draw 3d objects.  
+
+
+
+
+{\ttfamily \#include $<$ddd.\+hpp$>$}
+
+
+
+Collaboration diagram for driedobj\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classdriedobj__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdriedobj_afb127c8b8fb3eeccac0b10223058a454}{driedobj} (hwlib\+::window \&w, \hyperlink{structVertex}{Vertex} vertices\mbox{[}$\,$\mbox{]}, \hyperlink{structEdge}{Edge} edges\mbox{[}$\,$\mbox{]}, unsigned char verticelength, unsigned char edgelength, unsigned int screenwidth, unsigned int screenheight)
+\begin{DoxyCompactList}\small\item\em This is the decorator of the main class, it is a 3d object you can draw on 2d windows. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a7f650e57daea2e35095554131718d088}{void \hyperlink{classdriedobj_a7f650e57daea2e35095554131718d088}{rotate\+X} (float degrees)}\label{classdriedobj_a7f650e57daea2e35095554131718d088}
+
+\begin{DoxyCompactList}\small\item\em Rotate the object over the X-\/axis with x amount of degrees. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a7ec55d1803e85e6dab3fe23c9f387d98}{void \hyperlink{classdriedobj_a7ec55d1803e85e6dab3fe23c9f387d98}{rotate\+Y} (float degrees)}\label{classdriedobj_a7ec55d1803e85e6dab3fe23c9f387d98}
+
+\begin{DoxyCompactList}\small\item\em Rotate the object over the Y-\/axis with x amount of degrees. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a7d23752e964832477cc266605ee4234f}{void \hyperlink{classdriedobj_a7d23752e964832477cc266605ee4234f}{rotate\+Z} (float degrees)}\label{classdriedobj_a7d23752e964832477cc266605ee4234f}
+
+\begin{DoxyCompactList}\small\item\em Rotate the object over the Z-\/axis with x amount of degrees. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a1dd0bfeb6d88453a057f759b7f969bbe}{void \hyperlink{classdriedobj_a1dd0bfeb6d88453a057f759b7f969bbe}{translate} (float x, float y, float z)}\label{classdriedobj_a1dd0bfeb6d88453a057f759b7f969bbe}
+
+\begin{DoxyCompactList}\small\item\em Translate the object (move it around the world) by adding or subtracting its x y and z coordinates. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a30f12a90a332520104c379ca48ca5e55}{void \hyperlink{classdriedobj_a30f12a90a332520104c379ca48ca5e55}{scale} (float scale)}\label{classdriedobj_a30f12a90a332520104c379ca48ca5e55}
+
+\begin{DoxyCompactList}\small\item\em Scale the object to make it bigger or smaller. \end{DoxyCompactList}\item 
+\hypertarget{classdriedobj_a1ff67fb7a91ebaefbb5073d296411c3c}{void \hyperlink{classdriedobj_a1ff67fb7a91ebaefbb5073d296411c3c}{draw} ()}\label{classdriedobj_a1ff67fb7a91ebaefbb5073d296411c3c}
+
+\begin{DoxyCompactList}\small\item\em Print the object on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdriedobj_ae5abea12f7f59795493bd42f55e442e7}{\hyperlink{structVertex}{Vertex} $\ast$ {\bfseries vertices}}\label{classdriedobj_ae5abea12f7f59795493bd42f55e442e7}
+
+\item 
+\hypertarget{classdriedobj_aab0b19618c14ca7e61e93a30e82c2590}{\hyperlink{structEdge}{Edge} $\ast$ {\bfseries edges}}\label{classdriedobj_aab0b19618c14ca7e61e93a30e82c2590}
+
+\item 
+\hypertarget{classdriedobj_acb66bc6e8fe3ee3373def99fc42cb539}{float {\bfseries posx} = 0}\label{classdriedobj_acb66bc6e8fe3ee3373def99fc42cb539}
+
+\item 
+\hypertarget{classdriedobj_a584817574aee12a9cb8f0121a6da0fb6}{float {\bfseries posy} = 0}\label{classdriedobj_a584817574aee12a9cb8f0121a6da0fb6}
+
+\item 
+\hypertarget{classdriedobj_a67e851496be110d910d75e132f89a9e2}{float {\bfseries posz} = 0}\label{classdriedobj_a67e851496be110d910d75e132f89a9e2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main class, it can manipulate and draw 3d objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classdriedobj_afb127c8b8fb3eeccac0b10223058a454}{\index{driedobj@{driedobj}!driedobj@{driedobj}}
+\index{driedobj@{driedobj}!driedobj@{driedobj}}
+\subsubsection[{driedobj}]{\setlength{\rightskip}{0pt plus 5cm}driedobj\+::driedobj (
+\begin{DoxyParamCaption}
+\item[{hwlib\+::window \&}]{w, }
+\item[{{\bf Vertex}}]{vertices\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf Edge}}]{edges\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned char}]{verticelength, }
+\item[{unsigned char}]{edgelength, }
+\item[{unsigned int}]{screenwidth, }
+\item[{unsigned int}]{screenheight}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classdriedobj_afb127c8b8fb3eeccac0b10223058a454}
+
+
+This is the decorator of the main class, it is a 3d object you can draw on 2d windows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A hwlib window referenice where the object will be printed on. \\
+\hline
+{\em vertices} & An array of vertices that make up the 3d object. \\
+\hline
+{\em edges} & An array of edges that tell the object which vertices are connected. \\
+\hline
+{\em verticelength} & the amount of vertices. \\
+\hline
+{\em edgelength} & the amount of edges. \\
+\hline
+{\em screenwidth} & the width of the screen so that (0,0) is the middle of the screen. \\
+\hline
+{\em screenheight} & the height of the screen so that (0,0) is the middle of the screen. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arduino\+\_\+implementation/\+Lib/3\+D lib/\hyperlink{ddd_8hpp}{ddd.\+hpp}\item 
+Arduino\+\_\+implementation/\+Lib/3\+D lib/\hyperlink{ddd_8cpp}{ddd.\+cpp}\end{DoxyCompactItemize}
